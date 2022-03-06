@@ -61,7 +61,6 @@ PRODUCT_COPY_FILES += \
 	device/phh/treble/rw-system.sh:system/bin/rw-system.sh \
 	device/phh/treble/phh-on-data.sh:system/bin/phh-on-data.sh \
 	device/phh/treble/phh-prop-handler.sh:system/bin/phh-prop-handler.sh \
-	device/phh/treble/fixSPL/getSPL.arm:system/bin/getSPL
 
 PRODUCT_COPY_FILES += \
 	device/phh/treble/empty:system/phh/empty \
@@ -73,6 +72,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	bootctl \
 	vintf \
+	getSPL
 
 # Fix Offline Charging on Huawmeme
 PRODUCT_PACKAGES += \
@@ -82,12 +82,12 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	device/phh/treble/twrp/twrp.rc:system/etc/init/twrp.rc \
-	device/phh/treble/twrp/twrp.sh:system/bin/twrp.sh \
-	device/phh/treble/twrp/busybox-armv7l:system/bin/busybox_phh
+	device/phh/treble/twrp/twrp.sh:system/bin/twrp.sh
 
 PRODUCT_PACKAGES += \
     simg2img_simple \
-    lptools
+    lptools \
+    busybox_phh
 
 ifneq (,$(wildcard external/exfat))
 PRODUCT_PACKAGES += \
@@ -184,7 +184,6 @@ PRODUCT_COPY_FILES += \
 
 # Remote debugging
 PRODUCT_COPY_FILES += \
-	device/phh/treble/remote/dbclient:system/bin/dbclient \
 	device/phh/treble/remote/phh-remotectl.rc:system/etc/init/phh-remotectl.rc \
 	device/phh/treble/remote/phh-remotectl.sh:system/bin/phh-remotectl.sh \
 
@@ -196,6 +195,7 @@ PRODUCT_PACKAGES += \
 	vr_hwc \
 	curl \
 	healthd \
+	dbclient
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 	debug.fdsan=warn_once \

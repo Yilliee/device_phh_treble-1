@@ -1,0 +1,16 @@
+cc_prebuilt_binary {
+     name: "busybox_phh",
+     srcs: ["twrp/busybox-armv7l"],
+}
+
+cc_prebuilt_binary {
+     name: "getSPL",
+     srcs: ["fixSPL/getSPL.arm"],
+}
+
+cc_prebuilt_binary {
+     name: "dbclient",
+     allow_undefined_symbols: true,
+     srcs: ["remote/dbclient"],
+}
+
